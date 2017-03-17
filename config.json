@@ -1,0 +1,13 @@
+{
+	"service": "https://cntrl.way/",
+    "mongodb_address": "mymongo",
+    "mongodb_port": 27017,
+    "mongo_timeout": 2,
+    "redis_address": "redis",
+    "redis_port": 6379,
+    "redis_timeout": 120,
+    "log": "app.log",
+    "hash":"ripemd160",
+    "max_url_length": 500,
+    "short_url_length": 6
+} 

@@ -1,0 +1,18 @@
+nextbus:
+  build: .
+  command: python src/url_short
+  ports:
+   - "8001:8001"
+  volumes:
+   - .:/code
+  links:
+   - redis
+   - mongo
+redis:
+  image: "redis:alpine"
+  ports:
+    - "6379:6379"
+mongo:
+  image: "mongo:latest"
+  ports:
+    - "27017:27017"

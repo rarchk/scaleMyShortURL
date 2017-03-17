@@ -6,7 +6,7 @@ Goal is to build a scalable **URL Shortner**, which is exposed by following endp
 | Endpoints | Description | 
 |:---: | :---:
 |`/api/v1/get/short_url=<short_url>` | Redirects to the original url. |
-|`/api/v1/create/service=<service>&url=<url>&alias=/<alias>` | Converts a url to shortend url |
+|`/api/v1/create/url=<url>&alias=/<alias>` | Converts a url to shortend url |
 |`/api/v1/analytics/short_url=<short_url>` | Gets the analytics for a shortend url |
 
 *`<alias>`* lets you define the url shortend name, if available. *It is optional.*
@@ -26,7 +26,7 @@ $> ./test.sh
 ### One Click Demo
 1. [Install docker-compose](https://docs.docker.com/v1.5/compose/install/)
 2. docker-compose up 
-3. [curl localhost:8001/api/v1/create&service=cntrl.way&url=https://google.com](#examples) 
+3. [curl localhost:8001/api/v1/create/url=https://google.com](#examples) 
 
 ### Dependencies
 
@@ -36,8 +36,8 @@ $> ./test.sh
 	- requests
 
 ## Examples
-1. `/api/v1/create/service=cntrl.way&url=https://google.com`
-2. `/api/v1/create/service=cntrl.way&url=https://google.com&alias=g00`
+1. `/api/v1/create/url=https://google.com`
+2. `/api/v1/create/url=https://google.com&alias=g00`
 3. `/api/v1/get/short_url=http://cntrl.way/g00`
 4. `/api/v1/analytics/short_url=http://cntrl.way/g00`
 
