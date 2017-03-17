@@ -81,15 +81,14 @@ def get_route(request, config_dict):
     elif routers[3] == "get":
         _, short_url = route.split("=")
         short_url_hash = short_url.split(config_dict['service'])[1]
-        url = _simpledb.show(short_url_hash)
-        if (short_url_hash == 1):
-            pass;
-        else:
-            requests.get()    
-        
+        status, url = _simpledb.show(short_url_hash)
+        if (status == -1):
+            logger.error(url)
+            return
+        return requests.get(url)
+
     elif routers[3] == "analytics":
         pass
-
 
 
 def get_short_url_hash(url, config_dict):
